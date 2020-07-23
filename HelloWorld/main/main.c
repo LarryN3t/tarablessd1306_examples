@@ -19,8 +19,8 @@
 #if defined USE_I2C_DISPLAY
     static const int I2CDisplayAddress = 0x3C;
     static const int I2CDisplayWidth = 128;
-    static const int I2CDisplayHeight = 32;
-    static const int I2CResetPin = -1;
+    static const int I2CDisplayHeight = 64;
+    static const int I2CResetPin = 16;
 
     struct SSD1306_Device I2CDisplay;
 #endif
@@ -70,7 +70,7 @@ void app_main( void ) {
 
         #if defined USE_I2C_DISPLAY
             SetupDemo( &I2CDisplay, &Font_droid_sans_fallback_24x28 );
-            SayHello( &I2CDisplay, "Hello i2c!" );
+            SayHello( &I2CDisplay, "Buongiorno!" );
         #endif
 
         #if defined USE_SPI_DISPLAY
